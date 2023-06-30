@@ -15,10 +15,11 @@ const styles = {
     }
 };
 const Statement = ({ statement, expandedTerms, onTermClick }) => {
-    const [expandedTerm, setExpandedTerm] = useState(null);
+    const [expandedTerm, setExpandedTerm] = useState([]);
+    const [expandedTermsLocal, setExpandedTermsLocal] = useState([]);
 
     useEffect(() => {
-        setExpandedTerm(expandedTerms.find(term => statement.level_of_abstraction_1.terms.includes(term)));
+        setExpandedTermsLocal(expandedTerms.filter(term => statement.level_of_abstraction_1.terms.includes(term)));
     }, [expandedTerms, statement.level_of_abstraction_1.terms]);
 
     const termsPattern = new RegExp(`\\b(${statement.level_of_abstraction_1.terms.join('|')})\\b`, 'g');
@@ -46,15 +47,23 @@ const Statement = ({ statement, expandedTerms, onTermClick }) => {
                     key={index}
                     term={chunk.text}
                     hasDefinition={!!chunk.definition}
-                    onClick={typeof onTermClick === 'function' ? () => onTermClick(chunk.text) : undefined} // Check if onTermClick is a function before passing it
-                />
+                    onClick={typeof onTermClick === 'function' ? () => {
+                        onTermClick(chunk.text);
+                        setExpandedTermsLocal(prevTerms => {
+                            if (prevTerms.includes(chunk.text)) {
+                                return prevTerms.filter(t => t !== chunk.text);
+                            } else {
+                                return [...prevTerms, chunk.text];
+                            }
+                        });
+                    } : undefined} />
             ))}
-            {expandedTerm && (
-                <div>
-                    <strong>{expandedTerm}: </strong>
-                    {statement.level_of_abstraction_2.definitions[expandedTerm]}
+            {expandedTermsLocal.map(term => (
+                <div key={term}>
+                    <strong>{term}: </strong>
+                    {statement.level_of_abstraction_2.definitions[term]}
                 </div>
-            )}
+            ))}
         </div>
     );
 };
