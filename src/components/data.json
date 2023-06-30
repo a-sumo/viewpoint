@@ -1,0 +1,128 @@
+{
+    "dialogue": [
+        {
+            "participant": "Alex",
+            "statements": [
+                {
+                    "statement": "Affirmative Action, as a policy, aims to level the playing field by compensating for historical injustices.",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "Affirmative Action",
+                            "policy",
+                            "level the playing field",
+                            "compensating",
+                            "historical injustices"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "Affirmative Action": "A thing that gives some people advantages.",
+                            "policy": "Something decided by people in power.",
+                            "level the playing field": "Making things more equal but not necessarily fair.",
+                            "compensating": "Giving benefits to some at the expense of others.",
+                            "historical injustices": "Bad things that happened in the past."
+                        }
+                    }
+                },
+                {
+                    "statement": "It's not about disadvantaging the majority but rectifying systemic oppression.",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "disadvantaging",
+                            "majority",
+                            "rectifying",
+                            "systemic oppression"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "disadvantaging": "Making things harder for some.",
+                            "majority": "The group with more people.",
+                            "rectifying": "Fixing things, though it's unclear what 'fixing' means.",
+                            "systemic oppression": "Some sort of wide-scale unfairness."
+                        }
+                    }
+                },
+                {
+                    "statement": "Consider the vast socio-economic disparities that Affirmative Action is designed to address.",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "socio-economic disparities",
+                            "Affirmative Action",
+                            "designed",
+                            "address"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "socio-economic disparities": "Differences in wealth and stuff.",
+                            "Affirmative Action": "As previously defined.",
+                            "designed": "Created with a purpose, whatever that may be.",
+                            "address": "To do something about it, not necessarily effective."
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "participant": "Bob",
+            "statements": [
+                {
+                    "statement": "Affirmative Action feels like reverse discrimination to me.",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "Affirmative Action",
+                            "feels",
+                            "reverse discrimination"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "Affirmative Action": "A policy aiming to redress past injustices by prioritizing marginalized groups.",
+                            "feels": "Perceived based on my understanding and experiences.",
+                            "reverse discrimination": "The unintended negative impact on majority groups as a result of policies favoring minorities."
+                        }
+                    }
+                },
+                {
+                    "statement": "But it's pushing some people down to elevate others. That doesn't seem fair.",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "pushing down",
+                            "elevate",
+                            "others",
+                            "doesn't seem fair"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "pushing down": "Adversely affecting or limiting opportunities for.",
+                            "elevate": "Improve the position or condition of.",
+                            "others": "Members of certain groups, often minority groups.",
+                            "doesn't seem fair": "Appears to lack justice or equity."
+                        }
+                    }
+                },
+                {
+                    "statement": "I don't deny there are issues, but isn't this creating more division?",
+                    "level_of_abstraction_1": {
+                        "terms": [
+                            "don't deny",
+                            "issues",
+                            "creating",
+                            "more division"
+                        ]
+                    },
+                    "level_of_abstraction_2": {
+                        "definitions": {
+                            "don't deny": "Acknowledge the existence or truth of.",
+                            "issues": "Significant societal problems that need addressing.",
+                            "creating": "Resulting in or causing.",
+                            "more division": "Increasing societal tensions and divisions."
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

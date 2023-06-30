@@ -1,0 +1,20 @@
+/* Term.css */
+.term {
+    font-size: 16px;
+    color: #333;
+}
+
+.term-button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.term-button:hover {
+    background-color: #0056b3;
+}
