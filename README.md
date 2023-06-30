@@ -1,7 +1,5 @@
 # Statement Unfolding
-<p align="center">
-<img width="600" alt="image" src="https://github.com/a-sumo/viewpoint/assets/75185852/a86bb0bf-91e6-4b95-a4d1-c6ff9afffd4a">
-</p>
+
 Statement Unfolding is a project that seeks to reveal the deeper meanings, definitions, and biases in a conversation by decomposing each key term into its constituent parts. It illustrates how two individuals can use identical terms but operate on vastly different levels of abstraction.
 
 ## Purpose
@@ -26,6 +24,10 @@ The project uses a three-step process to break down a conversation:
 
 In conclusion, the Statement Unfolding project aims to expose the underlying biases and assumptions in a conversation and highlight the challenges of meaningful communication when the same terms carry different meanings for different individuals.
 
+# Example
+<p align="center">
+<img width="700" alt="image" src="https://github.com/a-sumo/viewpoint/assets/75185852/a86bb0bf-91e6-4b95-a4d1-c6ff9afffd4a">
+</p>
 
 # Create React App
 
