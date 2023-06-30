@@ -4,7 +4,7 @@ import './Guide.css';
 const Guide = ({ showGuide }) => {
   return (
     <div className={`guide-container ${showGuide ? '' : 'hide-guide'}`}>
-      <h1>Statement Unfolding - User Guide</h1>
+      <h1>Statement Unfolding </h1>
       <h2>Welcome!</h2>
       <p>This application lets you explore a conversation between two characters, Alex and Bob, who have differing depths of knowledge and experience on the topic of Affirmative Action.</p>
       <p>Alex tends to have a more shallow understanding and often speaks with verbosity but lack of coherence, whereas Bob's statements are less verbose but more grounded and consistent.</p>
