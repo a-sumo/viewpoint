@@ -2,30 +2,34 @@
   font-family: Arial, sans-serif;
 }
 
-/* App.css */
 .app-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
   height: 100vh;
 }
 
-.conversation-container {
-  flex: 2;
-  overflow: auto;
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
-.guide-toggle-container {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
+.conversation-container,
+.guide-container {
+  width: 100%;
 }
 
-button.guide {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 10px;
+@media (min-width: 768px) {
+  .conversation-container {
+    width: 60%;
+  }
+
+  .guide-container {
+    width: 35%;
+  }
 }
 
 button.guide-toggle {
@@ -33,23 +37,37 @@ button.guide-toggle {
   margin: 20px;
   font-size: 18px;
   font-weight: bold;
-  color: #ffffff; /* White text for better contrast with the teal background */
-  background-color: #20B2AA; /* LightSeaGreen */
+  color: #ffffff;
+  /* White text for better contrast with the teal background */
+  background-color: #20B2AA;
+  /* LightSeaGreen */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: flex-start;
+  align-self: center;
 }
 
 button.guide-toggle:hover {
-  background-color: #198080; /* Darker teal on hover */
+  background-color: #198080;
+  /* Darker teal on hover */
 }
 
 button.guide-toggle.active {
-  background-color: #006666; /* Dark teal for the active state */
+  background-color: #006666;
+  /* Dark teal for the active state */
 }
 
 button.guide-toggle.active:hover {
-  background-color: #004c4c; /* Very dark teal for active hover state */
+  background-color: #004c4c;
+  /* Very dark teal for active hover state */
+}
+
+@media (min-width: 768px) {
+  button.guide-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    align-self: unset;
+  }
 }
