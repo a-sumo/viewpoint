@@ -2,8 +2,25 @@
 // Statement.js
 import React from 'react';
 import Term from './Term';
+import { useState, useEffect } from 'react';
 
-const Statement = ({ statement, expandedTerm, onTermClick }) => {
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '20px',
+        backgroundColor: '#f2f7f7',
+    }
+};
+const Statement = ({ statement, expandedTerms, onTermClick }) => {
+    const [expandedTerm, setExpandedTerm] = useState(null);
+
+    useEffect(() => {
+        setExpandedTerm(expandedTerms.find(term => statement.level_of_abstraction_1.terms.includes(term)));
+    }, [expandedTerms, statement.level_of_abstraction_1.terms]);
+
     const termsPattern = new RegExp(`\\b(${statement.level_of_abstraction_1.terms.join('|')})\\b`, 'g');
     const chunks = statement.statement.split(termsPattern);
 
@@ -23,7 +40,7 @@ const Statement = ({ statement, expandedTerm, onTermClick }) => {
     }, []);
 
     return (
-        <div>
+        <div >
             {mergedChunks.map((chunk, index) => (
                 <Term
                     key={index}
