@@ -32,8 +32,9 @@ button.guide-toggle {
   padding: 10px 20px;
   margin: 20px;
   font-size: 18px;
-  color: white;
-  background-color: #dddddd;
+  font-weight: bold;
+  color: #ffffff; /* White text for better contrast with the teal background */
+  background-color: #20B2AA; /* LightSeaGreen */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -42,13 +43,13 @@ button.guide-toggle {
 }
 
 button.guide-toggle:hover {
-  background-color: #91dcdd;
+  background-color: #198080; /* Darker teal on hover */
 }
 
 button.guide-toggle.active {
-  background-color: #6c757d;
+  background-color: #006666; /* Dark teal for the active state */
 }
 
 button.guide-toggle.active:hover {
-  background-color: #5a6268;
+  background-color: #004c4c; /* Very dark teal for active hover state */
 }
