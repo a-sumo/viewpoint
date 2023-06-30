@@ -10,9 +10,15 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: '20px',
+        margin: '10px',
         backgroundColor: '#f2f7f7',
-    }
+    },
+    expandedTermStyle : {
+        padding: '10px',
+        margin: '10px 0px',
+        border: '1px solid #ddd',
+        borderRadius: '5px',
+      },
 };
 const Statement = ({ statement, expandedTerms, onTermClick }) => {
     const [expandedTerm, setExpandedTerm] = useState([]);
@@ -59,7 +65,7 @@ const Statement = ({ statement, expandedTerms, onTermClick }) => {
                     } : undefined} />
             ))}
             {expandedTermsLocal.map(term => (
-                <div key={term}>
+                <div key={term} style={styles.expandedTermStyle}>
                     <strong>{term}: </strong>
                     {statement.level_of_abstraction_2.definitions[term]}
                 </div>

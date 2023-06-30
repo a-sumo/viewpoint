@@ -1,0 +1,16 @@
+/* Guide.css */
+.guide-container {
+    overflow-y: auto;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px;
+    padding: 10px;
+    height: calc(100vh - 20px);
+    border-left: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.guide-container.hide-guide {
+    display: none;
+}
