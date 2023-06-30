@@ -45,7 +45,8 @@ button.guide-toggle {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: center;
+  overflow: hidden;
+
 }
 
 button.guide-toggle:hover {

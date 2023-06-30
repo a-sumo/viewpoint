@@ -1,5 +1,6 @@
 /* Guide.css */
 .guide-container {
+    overflow-x: 2px;
     overflow-y: auto;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
