@@ -16,7 +16,7 @@ def conversation():
       messages=[
           {
             "role": "user",
-            "content": message
+            "content": "Say this is a conversation"
           }
       ]
     )
