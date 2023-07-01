@@ -11,10 +11,14 @@ def conversation():
     message = data.get('message')
 
     # Call the OpenAI API with the message
-    response = openai.Completion.create(
-      engine="text-davinci-002",
-      prompt=message,
-      max_tokens=150
+    response = openai.ChatCompletion.create(
+      model="gpt-3.5-turbo",
+      messages=[
+          {
+            "role": "user",
+            "content": message
+          }
+      ]
     )
 
-    return jsonify(response.choices[0].text.strip())
+    return jsonify(response['choices'][0]['message']['content'])
