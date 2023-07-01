@@ -82,7 +82,6 @@ const Conversation = ({ dialogue }) => {
     participant.statements.map((statement) => ({ ...statement, participant: participant.name }))
   );
 
-  console.log(dialogue[0].participant);
   return (
     <div style={styles.container}>
       <TopicInput setTopic={setTopic} />

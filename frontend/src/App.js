@@ -6,7 +6,6 @@ import './App.css';
 function App() {
   const dialogueData = require('./components/data.json');
   const [showGuide, setShowGuide] = useState(true);
-  console.log("openapikey", process.env.OPENAI_API_KEY);
   return (
     <div className="App">
       <div className="app-container">
