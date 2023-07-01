@@ -15,5 +15,13 @@
             "src": "/api/(.*)",
             "dest": "backend/app.py"
         }
-    ]
+    ],
+    "functions": {
+        "backend/app.py": {
+            "excludeFiles": "**/*.test.py"
+        },
+        "pages/**/*": {
+            "excludeFiles": "public/**"
+        }
+    }
 }
