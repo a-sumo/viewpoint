@@ -51,18 +51,20 @@ const Conversation = ({ dialogue }) => {
                 // Further participants...
               ]
             }`;
-
       const fetchConversation = async () => {
-        const response = await axios.post('api/conversation', {
-          message: prompt,
-        });
+        try {
+          const response = await axios.post('/api/conversation', {
+            message: prompt,
+          });
 
-        setConversation(response.data);
+          setConversation(response.data);
+        } catch (error) {
+          console.error(error);
+        }
       };
 
       fetchConversation();
 
-      fetchConversation();
     }
   }, [topic]);
 
