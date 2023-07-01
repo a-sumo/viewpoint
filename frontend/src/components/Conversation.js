@@ -53,7 +53,7 @@ const Conversation = ({ dialogue }) => {
             }`;
 
       const fetchConversation = async () => {
-        const response = await axios.post('http://localhost:5000/api/conversation', {
+        const response = await axios.post('api/conversation', {
           message: prompt,
         });
 
