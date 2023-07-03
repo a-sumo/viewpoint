@@ -1,26 +1,32 @@
-import React from 'react';
-import './Term.css';
+import React, { useState } from 'react';
 
-const Term = ({ term, hasDefinition, onClick }) => {
-    if (hasDefinition) {
-        return (
-            <button
-                style={styles.button}
-                onMouseEnter={e => Object.assign(e.currentTarget.style, styles.buttonHover)}
-                onMouseLeave={e => Object.assign(e.currentTarget.style, styles.button)}
-                onClick={() => {
-                    console.log(`Term ${term} was clicked.`);
-                    if (typeof onClick === 'function') { 
-                        onClick(term);
-                      }
-                }}
-            >
-                {term}
-            </button>
-        );
-    }
-    return <span>{term}</span>;
+const Term = ({ term, definition, onClick }) => {
+  const [hover, setHover] = useState(false);
+  const [click, setClick] = useState(false);
+
+  return (
+    <div
+      style={definition ? styles.button : styles.buttonWithoutDefinition}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onClick={() => {
+        console.log(`Term ${term} was clicked.`);
+        setClick(!click);
+        if (typeof onClick === 'function') {
+          onClick(term);
+        }
+      }}
+    >
+      {term}
+      {(hover || click) && definition && (
+        <div style={styles.definition}>
+          {definition}
+        </div>
+      )}
+    </div>
+  );
 };
+
 
 // create style for term, button and button hover
 
@@ -31,7 +37,6 @@ const styles = {
         backgroundOpacity: '0.5',
         border: 'none',
         color: 'black',
-        padding: '5px 10px',
         textAlign: 'center',
         textDecoration: 'none',
         display: 'inline-block',
@@ -39,8 +44,18 @@ const styles = {
         margin: '2px 2px',
         cursor: 'pointer',
     },
-    // hover button
-
+    buttonWithoutDefinition: {
+        borderRadius: '10px',
+        backgroundColor: 'transparent',
+        backgroundOpacity: '0.5',
+        border: 'none',
+        color: 'black',
+        textAlign: 'center',
+        textDecoration: 'none',
+        display: 'inline-block',
+        fontSize: '16px',
+        margin: '2px 2px',
+    },
     buttonHover: {
         borderRadius: '10px',
         backgroundColor: '#e5e2e5',
@@ -62,6 +77,13 @@ const styles = {
         color: 'blue',
         fontWeight: 'bold',
     },
+    definition: {
+        backgroundColor: '#eee',
+        padding: '5px',
+        borderRadius: '5px',
+        marginTop: '5px',
+      },
+    
 };
 
 export default Term;

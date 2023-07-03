@@ -1,20 +1,50 @@
-/* Term.css */
 .term {
-    font-size: 16px;
-    color: #333;
-}
-
-.term-button {
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    /* new addition */
+    justify-content: space-between;
+    /* new addition */
 }
 
-.term-button:hover {
-    background-color: #0056b3;
+.term-text.hide,
+.definition.hide {
+    display: none;
+}
+
+.term-text,
+.definition {
+    display: inline;
+}
+.term-text,
+.definition {
+    display: inline;
+}
+
+.term-text {
+    background-color: #f0f0f0;
+    /* background color for term */
+}
+
+.term-hover .term-text {
+    visibility: hidden;
+    /* hide term text when term is hovered or clicked */
+}
+
+.definition {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    visibility: hidden;
+    /* hide definition initially */
+}
+
+.show {
+    max-height: 1000px;
+    /* should be larger than the content's actual height */
+    visibility: visible;
+    /* show definition when term is hovered or clicked */
 }

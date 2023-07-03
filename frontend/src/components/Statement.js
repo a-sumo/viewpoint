@@ -13,12 +13,12 @@ const styles = {
         margin: '10px',
         backgroundColor: '#f2f7f7',
     },
-    expandedTermStyle : {
+    expandedTermStyle: {
         padding: '10px',
         margin: '10px 0px',
         border: '1px solid #ddd',
         borderRadius: '5px',
-      },
+    },
 };
 const Statement = ({ statement, expandedTerms, onTermClick }) => {
     const [expandedTerm, setExpandedTerm] = useState([]);
@@ -52,17 +52,9 @@ const Statement = ({ statement, expandedTerms, onTermClick }) => {
                 <Term
                     key={index}
                     term={chunk.text}
-                    hasDefinition={!!chunk.definition}
-                    onClick={typeof onTermClick === 'function' ? () => {
-                        onTermClick(chunk.text);
-                        setExpandedTermsLocal(prevTerms => {
-                            if (prevTerms.includes(chunk.text)) {
-                                return prevTerms.filter(t => t !== chunk.text);
-                            } else {
-                                return [...prevTerms, chunk.text];
-                            }
-                        });
-                    } : undefined} />
+                    definition={chunk.definition}
+                />
+
             ))}
             {expandedTermsLocal.map(term => (
                 <div key={term} style={styles.expandedTermStyle}>
